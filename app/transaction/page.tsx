@@ -139,7 +139,7 @@ export default function TransactionPage() {
                 <div className="bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 rounded-2xl p-6 border-4 border-white shadow-lg">
                   <div className="text-6xl mb-4 animate-bounce">👋</div>
                   <div className="text-3xl font-black text-purple-800 mb-4">
-                    "안녕하세요! 성함이 어떻게 되세요?"
+                    &ldquo;안녕하세요! 성함이 어떻게 되세요?&rdquo;
                   </div>
                 </div>
                 <div className="max-w-md mx-auto">

@@ -3,7 +3,7 @@
 import { useBank } from '@/hooks/useBank'
 
 export default function RankingPage() {
-  const { rankedStudents, totalAssets, loading } = useBank()
+  const { rankedStudents, loading } = useBank()
 
   if (loading) {
     return (
@@ -41,7 +41,7 @@ export default function RankingPage() {
 
         {/* 상위 3명 하이라이트 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          {[rankedStudents[1], rankedStudents[0], rankedStudents[2]].filter(Boolean).map((student, displayIndex) => {
+          {[rankedStudents[1], rankedStudents[0], rankedStudents[2]].filter(Boolean).map((student, _displayIndex) => {
             const actualRank = student.id === rankedStudents[0]?.id ? 0 : student.id === rankedStudents[1]?.id ? 1 : 2;
             return (
               <div
