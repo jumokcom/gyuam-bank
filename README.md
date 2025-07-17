@@ -1,24 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gyuam Bank
 
-## Getting Started
+Next.js + TypeScript + TailwindCSS + Supabase 조합으로 만든 웹 애플리케이션입니다.
 
-First, run the development server:
+## 기술 스택
+
+- **Frontend**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: TailwindCSS
+- **Database**: Supabase
+- **Deployment**: Vercel
+- **IDE**: Cursor with MCP (Model Context Protocol)
+
+## 초기 설정
+
+### 1. 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. 환경 변수 설정
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`.env.local` 파일을 생성하고 다음 내용을 추가하세요:
+
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+
+# NextAuth.js (필요시)
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+```
+
+### 3. 사용 방법
+
+- 총 18명의 초등학생을 위한 가상 은행 체험 프로그램
+- 로컬 스토리지를 사용하여 별도 데이터베이스 불필요
+- 학생별 입출금, 자산 순위, 거래 내역 관리 가능
 
 ## Learn More
 
