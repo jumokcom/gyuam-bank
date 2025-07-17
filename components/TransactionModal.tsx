@@ -35,17 +35,17 @@ export default function TransactionModal({
     
     // 유효성 검사
     if (!amount || numAmount <= 0) {
-      setError('올바른 금액을 입력해주세요')
+      setError('처리할 금액을 정확히 입력해주세요')
       return
     }
 
     if (type === 'withdrawal' && numAmount > student.balance) {
-      setError('잔액이 부족합니다')
+      setError('고객님의 계좌 잔액이 부족합니다')
       return
     }
 
     if (!description.trim()) {
-      setError('거래 내용을 입력해주세요')
+      setError('거래 내역을 입력해주세요')
       return
     }
 
@@ -71,7 +71,7 @@ export default function TransactionModal({
       <div className="bg-white rounded-2xl p-6 w-full max-w-md mx-4">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-800">
-            {type === 'deposit' ? '💰 입금하기' : '💸 출금하기'}
+            {type === 'deposit' ? '💰 입금 처리' : '💸 출금 처리'}
           </h2>
           <button
             onClick={handleClose}
@@ -82,14 +82,14 @@ export default function TransactionModal({
         </div>
 
         <div className="mb-4">
-          <p className="text-lg font-semibold text-gray-700">👤 {student.name}님</p>
-          <p className="text-gray-600">현재 잔액: {student.balance.toLocaleString()}원</p>
+          <p className="text-lg font-semibold text-gray-700">👤 {student.name} 고객님</p>
+          <p className="text-gray-600">계좌 잔액: {student.balance.toLocaleString()}원</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-2">
-              {type === 'deposit' ? '입금' : '출금'} 금액
+              {type === 'deposit' ? '입금 처리' : '출금 처리'} 금액
             </label>
             <input
               id="amount"
@@ -97,7 +97,7 @@ export default function TransactionModal({
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
-              placeholder="금액을 입력하세요"
+              placeholder="처리할 금액을 입력하세요"
               min="1"
               step="1"
               autoFocus
@@ -106,7 +106,7 @@ export default function TransactionModal({
 
           <div>
             <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
-              거래 내용
+              거래 내역
             </label>
             <input
               id="description"
@@ -114,7 +114,7 @@ export default function TransactionModal({
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
-              placeholder="예: 용돈, 간식비, 저축 등"
+              placeholder="예: 용돈 저금, 간식비 인출, 저축 등"
               maxLength={50}
             />
           </div>
@@ -141,7 +141,7 @@ export default function TransactionModal({
                   : 'bg-red-500 hover:bg-red-600'
               }`}
             >
-              {type === 'deposit' ? '입금' : '출금'}
+              {type === 'deposit' ? '입금 처리' : '출금 처리'}
             </button>
           </div>
         </form>
