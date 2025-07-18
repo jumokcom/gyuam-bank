@@ -97,7 +97,7 @@ export default function TransactionPage() {
       <div className="absolute top-1/3 right-5 text-4xl animate-bounce opacity-20">🎊</div>
       
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border-4 border-white">
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-6 border-4 border-white">
           {/* 헤더 */}
           <div className="text-center mb-8">
             <h1 className="text-5xl font-black text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-600 bg-clip-text mb-3">
@@ -190,8 +190,8 @@ export default function TransactionPage() {
             )}
 
             {currentStep === 'enter_amount' && (
-              <div className="text-center space-y-8">
-                <div className="bg-gradient-to-r from-yellow-200 via-orange-200 to-red-200 rounded-2xl p-6 border-4 border-white shadow-lg">
+              <div className="text-center space-y-6">
+                <div className="bg-gradient-to-r from-yellow-200 via-orange-200 to-red-200 rounded-2xl p-4 border-4 border-white shadow-lg">
                   <div className="text-6xl mb-4 animate-pulse">💰</div>
                   <div className="text-2xl font-black text-purple-800 mb-2">
                     {transactionType === 'deposit' ? '입금' : '출금'} 금액을 입력해주세요
@@ -206,13 +206,13 @@ export default function TransactionPage() {
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     placeholder="금액을 입력하세요"
-                    className="w-full px-6 py-4 text-4xl text-center border-4 border-yellow-300 rounded-2xl focus:border-yellow-500 focus:outline-none shadow-lg font-black"
+                    className="w-full px-6 py-3 text-4xl text-center border-4 border-yellow-300 rounded-2xl focus:border-yellow-500 focus:outline-none shadow-lg font-black"
                     onKeyPress={(e) => e.key === 'Enter' && handleEnterAmount()}
                   />
                   <div className="text-right text-xl text-purple-700 font-bold mt-2">원</div>
                   <button
                     onClick={handleEnterAmount}
-                    className="w-full mt-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-4 px-6 rounded-2xl text-xl font-black hover:from-yellow-600 hover:to-orange-600 transition-all shadow-lg transform hover:scale-105"
+                    className="w-full mt-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-2xl text-xl font-black hover:from-yellow-600 hover:to-orange-600 transition-all shadow-lg transform hover:scale-105"
                   >
                     💫 금액 확인 💫
                   </button>

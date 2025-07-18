@@ -33,13 +33,6 @@ export default function AssetsPage() {
     return '🔥'
   }
 
-  const getStatusText = (balance: number) => {
-    if (balance >= 2000) return '💎 부자!'
-    if (balance >= 1500) return '⭐ 우수!'
-    if (balance >= 1000) return '💰 보통!'
-    return '🔥 화이팅!'
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-400 to-yellow-400 p-4 relative overflow-hidden">
       {/* 배경 장식 요소들 */}
@@ -106,16 +99,6 @@ export default function AssetsPage() {
                   {student.balance.toLocaleString()}원
                 </div>
                 
-                <div className="mt-2">
-                  <span className={`px-3 py-1 rounded-full text-sm font-black shadow-lg border-2 ${
-                    student.balance >= 2000 ? 'bg-gradient-to-r from-green-400 to-green-600 text-green-900 border-green-700' :
-                    student.balance >= 1500 ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-yellow-900 border-yellow-700' :
-                    student.balance >= 1000 ? 'bg-gradient-to-r from-orange-400 to-orange-600 text-orange-900 border-orange-700' :
-                    'bg-gradient-to-r from-red-400 to-red-600 text-red-900 border-red-700'
-                  }`}>
-                    {getStatusText(student.balance)}
-                  </span>
-                </div>
               </div>
             ))}
           </div>
