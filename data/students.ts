@@ -2,9 +2,9 @@ import { Student } from '@/types/database'
 
 // 3개 팀 계좌 데이터
 export const initialStudents: Omit<Student, 'id'>[] = [
-  { name: '1팀', balance: 1000 },
-  { name: '2팀', balance: 1000 },
-  { name: '3팀', balance: 1000 }
+  { name: '서왕', balance: 1000 },
+  { name: '이글스', balance: 1000 },
+  { name: '야르', balance: 1000 }
 ]
 
 // 로컬 스토리지용 키

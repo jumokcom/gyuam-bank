@@ -14,8 +14,20 @@ export function useBank() {
     const savedStudents = localStorage.getItem(STORAGE_KEYS.STUDENTS)
     const parsedStudents = savedStudents ? JSON.parse(savedStudents) : null
     
-    // 학생 수가 다르면 데이터 초기화 (15명 → 18명 대응)
-    if (!parsedStudents || parsedStudents.length !== initialStudents.length) {
+    // 팀명 변경 감지 함수
+    const hasTeamNameChanged = (saved: Student[]) => {
+      if (saved.length !== initialStudents.length) return true
+      
+      for (let i = 0; i < saved.length; i++) {
+        if (saved[i].name !== initialStudents[i].name) {
+          return true
+        }
+      }
+      return false
+    }
+    
+    // 학생 수가 다르거나 팀명이 변경되면 데이터 초기화
+    if (!parsedStudents || hasTeamNameChanged(parsedStudents)) {
       // 초기 데이터 설정
       const studentsWithId = initialStudents.map((student, index) => ({
         ...student,
